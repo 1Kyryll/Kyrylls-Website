@@ -33,3 +33,6 @@ input:focus { outline: none; }
 
 .no-scrollbar::-webkit-scrollbar { display: none; }
 .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+:root { --drawer-hidden: translateY(100%); }
+@media (min-width: 640px) { :root { --drawer-hidden: translateX(100%); } }
