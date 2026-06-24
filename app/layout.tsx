@@ -17,7 +17,7 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: "Kyryll Pavlenko",
-  description: "Software engineer & reader. Books, places, and writing.",
+  description: "Software engineer. Books, places, and writing.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -25,6 +25,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" className={`${spaceGrotesk.variable} ${jetbrainsMono.variable}`}>
       <head>
         <link rel="preconnect" href="https://covers.openlibrary.org" />
+        <link rel="alternate" type="application/rss+xml" title="Kyryll Pavlenko — Writing & Books" href="/rss.xml" />
       </head>
       <body>
         <SiteHeader />
