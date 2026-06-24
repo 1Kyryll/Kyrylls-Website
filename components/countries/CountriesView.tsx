@@ -3,6 +3,7 @@ import dynamic from "next/dynamic";
 import { useMemo, useState } from "react";
 import { countries } from "@/lib/data/countries";
 import { worldStats } from "@/lib/helpers";
+import Flag from "./Flag";
 
 const Globe = dynamic(() => import("./Globe"), { ssr: false });
 
@@ -58,7 +59,7 @@ export default function CountriesView() {
                 <div className="text-xs tracking-[0.08em]" style={{ fontFamily: "var(--font-mono)", color: "var(--accent)" }}>{sel.code} · {sel.year}</div>
                 <button onClick={() => setSelected(null)} className="text-[11px]" style={{ fontFamily: "var(--font-mono)", color: "oklch(0.6 0.02 262)" }}>✕ clear</button>
               </div>
-              <div className="my-2.5 flex items-center gap-3 text-[30px] font-semibold tracking-[-0.02em]"><span style={{ fontSize: 30, lineHeight: 1 }}>{sel.flag}</span>{sel.name}</div>
+              <div className="my-2.5 flex items-center gap-3 text-[30px] font-semibold tracking-[-0.02em]"><Flag code={sel.code} height={26} />{sel.name}</div>
               <div className="mb-4 text-xs" style={{ fontFamily: "var(--font-mono)", color: "var(--muted)" }}>{sel.region}</div>
               <div className="mb-4 text-[13px]" style={{ fontFamily: "var(--font-mono)", color: "oklch(0.45 0.02 262)" }}>{sel.cities}</div>
               <p className="m-0 text-[15px] leading-[1.6]" style={{ color: "oklch(0.4 0.02 262)" }}>{sel.note}</p>
@@ -71,7 +72,7 @@ export default function CountriesView() {
               const active = selected === c.name;
               return (
                 <button key={c.code} onClick={() => setSelected(c.name)} className="mb-1 flex w-full items-center justify-between rounded-[10px] border px-3 py-2.5 text-left" style={{ borderColor: active ? "var(--accent)" : "transparent", background: active ? "oklch(0.58 0.2 255 / 0.08)" : "transparent" }}>
-                  <span className="flex items-center gap-3"><span style={{ fontSize: 20, lineHeight: 1 }}>{c.flag}</span><span className="text-[15px] font-medium">{c.name}</span></span>
+                  <span className="flex items-center gap-3"><Flag code={c.code} height={18} /><span className="text-[15px] font-medium">{c.name}</span></span>
                   <span className="text-xs" style={{ fontFamily: "var(--font-mono)", color: "oklch(0.58 0.02 262)" }}>{c.year}</span>
                 </button>
               );
