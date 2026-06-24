@@ -1,7 +1,14 @@
-export interface Project { name: string; desc: string; status: "live" | "wip"; tech: string[]; }
+export interface Project { name: string; desc: string; status: "live" | "wip"; tech: string[]; url?: string; }
 
-// TODO: replace with your real projects.
+// `status` is a best guess (live = working/complete, wip = actively in progress).
 export const projects: Project[] = [
-  { name: "Placeholder Project", desc: "Placeholder description of what it does and why it exists.", status: "live", tech: ["TypeScript", "Next.js"] },
-  { name: "Another Project", desc: "Placeholder description of what it does and why it exists.", status: "wip", tech: ["Rust"] },
+  { name: "Job-Agent", desc: "AI-first job search platform: semantic CV-to-job matching, AI-generated applications, and end-to-end application tracking.", status: "wip", tech: ["Python", "TypeScript", "LLMs", "Semantic Search"], url: "https://github.com/Pukakiii/Job-Agent" },
+  { name: "E-Commerce-System", desc: "Production-style e-commerce backend in Go with a Next.js storefront. Load-tested with Grafana k6 and fully instrumented with the Grafana LGTM observability stack.", status: "wip", tech: ["Go", "Next.js", "Grafana k6", "OpenTelemetry"], url: "https://github.com/1Kyryll/E-Commerce-System" },
+  { name: "Restaurant-System-Microservices", desc: "Event-driven restaurant system built as Go microservices over gRPC and GraphQL, pushing live order events to a kitchen dashboard via WebSockets, with a Next.js frontend.", status: "live", tech: ["Go", "gRPC", "GraphQL", "WebSockets", "Next.js"], url: "https://github.com/1Kyryll/Restaurant-System-Microservices" },
+  { name: "OneTube", desc: "YouTube-style video platform with a Go backend and Next.js client, using MinIO S3-compatible object storage for uploads and RabbitMQ workers for background processing.", status: "live", tech: ["Go", "Next.js", "MinIO", "RabbitMQ"], url: "https://github.com/1Kyryll/OneTube" },
+  { name: "Lychee-Chat", desc: "Real-time chat app on Next.js and Express using WebSockets for messaging, Redis for caching and pub/sub, MongoDB for storage, and BullMQ for background jobs.", status: "live", tech: ["TypeScript", "Next.js", "Redis", "MongoDB", "WebSockets", "BullMQ"], url: "https://github.com/1Kyryll/Lychee-Chat" },
+  { name: "Personal-Finance-Tracker", desc: "Personal finance tracker built as a React SPA talking to a Python REST API over HTTP — a monolith demonstrating clean client/server separation.", status: "live", tech: ["React", "TypeScript", "Python", "REST"], url: "https://github.com/1Kyryll/Personal-Finance-Tracker" },
+  { name: "Eye-Tracking-Page-Scrolling", desc: "Open-source tool that scrolls any page using just your webcam — no extra hardware. Runs in the system tray with fully on-device processing across Chrome, VS Code, PDFs and more.", status: "live", tech: ["Python", "Computer Vision"], url: "https://github.com/1Kyryll/Eye-Tracking-Page-Scrolling" },
+  { name: "Security-Tools", desc: "A collection of offensive-security and pentesting utilities written in Python for everyday red-team tasks. Educational use only.", status: "live", tech: ["Python", "Security"], url: "https://github.com/1Kyryll/Security-Tools" },
+  { name: "ARP-MITM-Toolkit", desc: "Python ARP-spoofing toolkit for man-in-the-middle experiments on a LAN. Built for educational and authorized testing use only.", status: "live", tech: ["Python", "Networking", "Security"], url: "https://github.com/1Kyryll/ARP-MITM-Toolkit" },
 ];

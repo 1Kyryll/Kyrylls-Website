@@ -6,8 +6,15 @@ export default function ProjectGrid() {
       <div className="mb-3.5 text-xs tracking-[0.12em]" style={{ fontFamily: "var(--font-mono)", color: "var(--accent)" }}>04 — WORK</div>
       <h2 className="m-0 mb-9 font-semibold leading-[1.05] tracking-[-0.02em]" style={{ fontSize: "clamp(1.75rem, 6vw, 2.5rem)" }}>Projects</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        {projects.map((pr) => (
-          <div key={pr.name} className="flex min-h-[190px] flex-col rounded-2xl border p-6" style={{ borderColor: "var(--line)", background: "var(--surface)" }}>
+        {projects.map((pr) => {
+          const Wrapper = pr.url ? "a" : "div";
+          return (
+          <Wrapper
+            key={pr.name}
+            {...(pr.url ? { href: pr.url, target: "_blank", rel: "noopener noreferrer" } : {})}
+            className={`flex min-h-[190px] flex-col rounded-2xl border p-6 no-underline text-inherit transition-colors ${pr.url ? "hover:border-(--accent)" : ""}`}
+            style={{ borderColor: "var(--line)", background: "var(--surface)" }}
+          >
             <div className="mb-3.5 flex items-center justify-between">
               <span className="text-xl font-semibold tracking-[-0.01em]">{pr.name}</span>
               <span className="text-[11px]" style={{ fontFamily: "var(--font-mono)", color: pr.status === "live" ? "oklch(0.6 0.17 150)" : "oklch(0.7 0.15 70)" }}>● {pr.status}</span>
@@ -18,8 +25,9 @@ export default function ProjectGrid() {
                 <span key={t} className="rounded-md border px-2.5 py-[3px] text-[11px]" style={{ fontFamily: "var(--font-mono)", color: "oklch(0.5 0.02 262)", borderColor: "var(--line)" }}>{t}</span>
               ))}
             </div>
-          </div>
-        ))}
+          </Wrapper>
+          );
+        })}
       </div>
     </section>
   );
