@@ -7,6 +7,8 @@ const STORE = "wall-notes-v1";
 
 export default function NoteWall() {
   const [isMobile, setIsMobile] = useState(false);
+  // Bumped once after saved positions load so the board re-renders with them on reload.
+  const [, setHydrated] = useState(false);
   const boardRef = useRef<HTMLDivElement>(null);
   const posRef = useRef<Record<string, { left: number; top: number; rot: number }>>({});
   const zTop = useRef(20);
@@ -21,6 +23,7 @@ export default function NoteWall() {
 
   useEffect(() => {
     try { posRef.current = JSON.parse(localStorage.getItem(STORE) || "{}") || {}; } catch { posRef.current = {}; }
+    setHydrated(true);
   }, []);
 
   useEffect(() => {
