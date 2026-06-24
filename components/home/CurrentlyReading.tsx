@@ -9,9 +9,9 @@ export default function CurrentlyReading() {
         <div className="text-xl font-semibold tracking-[-0.01em]">{reading.title}</div>
         <div className="mt-1" style={{ color: "var(--muted)" }}>{reading.author}</div>
         <div className="mt-5 h-[5px] overflow-hidden rounded-full" style={{ background: "oklch(0.92 0.006 262)" }}>
-          <div className="h-full rounded-full" style={{ width: "62%", background: "var(--accent)" }} />
+          <div className="h-full rounded-full" style={{ width: "48%", background: "var(--accent)" }} />
         </div>
-        <div className="mt-2.5 text-[11px]" style={{ fontFamily: "var(--font-mono)", color: "var(--muted)" }}>62% — pg. 248 / 401</div>
+        <div className="mt-2.5 text-[11px]" style={{ fontFamily: "var(--font-mono)", color: "var(--muted)" }}>48% — pg. 96 / 220</div>
       </div>
     </div>
   );
