@@ -99,7 +99,7 @@ export default function NoteWall() {
 
   return (
     <section className="py-12 sm:py-16">
-      <div className="mb-3.5 text-xs tracking-[0.12em]" style={{ fontFamily: "var(--font-mono)", color: "var(--accent)" }}>05 — NOW</div>
+      <div className="mb-3.5 text-xs tracking-[0.12em]" style={{ fontFamily: "var(--font-mono)", color: "var(--accent)" }}>05 — WALL</div>
       <h2 className="m-0 mb-2.5 font-semibold leading-[1.05] tracking-[-0.02em]" style={{ fontSize: "clamp(1.75rem, 6vw, 2.5rem)" }}>The wall</h2>
       <p className="m-0 mb-7 text-[13px]" style={{ fontFamily: "var(--font-mono)", color: "oklch(0.55 0.02 262)" }}>Quotes and thoughts I&apos;m pinning lately{isMobile ? "." : " — drag the notes around."}</p>
 

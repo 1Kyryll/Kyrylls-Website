@@ -20,7 +20,7 @@ All content lives in `lib/data/*.ts` as typed, editable data:
 - `countries.ts` — places visited (`name` must match the world-atlas country name to light up on the globe)
 - `posts.ts` — writing
 - `projects.ts` — work
-- `notes.ts` — the "Now" wall quotes/thoughts
+- `notes.ts` — the Wall quotes/thoughts
 - `site.ts` — name, email, focus areas, social links
 
 Entries currently marked `// TODO` are placeholders — replace them with your own.
@@ -29,7 +29,7 @@ The accent color is the CSS variable `--accent` in `app/globals.css` (default `#
 
 ## Structure
 
-- `app/*` — one route per section (`/`, `/books`, `/countries`, `/writing`, `/projects`, `/now`, `/contact`)
+- `app/*` — one route per section (`/`, `/books`, `/countries`, `/writing`, `/projects`, `/wall`, `/contact`)
 - `components/*` — section components; interactive islands are `BooksLibrary`, `Globe`, `NoteWall`
 - `lib/helpers.ts` — pure helpers (unit-tested in `lib/helpers.test.ts`)
 - `public/atlas/countries-110m.json` — vendored world atlas for the globe
