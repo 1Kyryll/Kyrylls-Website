@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Space_Grotesk, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
+import SiteHeader from "@/components/SiteHeader";
+import SiteFooter from "@/components/SiteFooter";
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -24,7 +26,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         <link rel="preconnect" href="https://covers.openlibrary.org" />
       </head>
-      <body>{children}</body>
+      <body>
+        <SiteHeader />
+        <div className="mx-auto max-w-[1160px] px-5 sm:px-8">{children}</div>
+        <SiteFooter />
+      </body>
     </html>
   );
 }
