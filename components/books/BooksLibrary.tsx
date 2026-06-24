@@ -71,12 +71,12 @@ export default function BooksLibrary() {
         <div className="py-12 text-center text-[13px]" style={{ fontFamily: "var(--font-mono)", color: "oklch(0.6 0.02 262)" }}>No books match &quot;{query}&quot;</div>
       ) : (
         <div className="mt-8 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6">
-          {filtered.map((b) => {
+          {filtered.map((b, i) => {
             const stars = starString(b.rating);
             return (
               <div key={b.isbn + b.title} onClick={() => open(b)} onMouseEnter={() => prefetch(b.isbn)} className="cursor-pointer group">
                 <div className="relative overflow-hidden rounded-[3px_7px_7px_3px] transition-transform duration-200 group-hover:-translate-y-2.5" style={{ aspectRatio: "2 / 3", boxShadow: "0 2px 4px oklch(0.2 0.02 262 / 0.10), 0 13px 22px oklch(0.2 0.02 262 / 0.18)" }}>
-                  <BookCover isbn={b.isbn} title={b.title} />
+                  <BookCover isbn={b.isbn} title={b.title} priority={i < 5} />
                   <div className="pointer-events-none absolute left-0 top-0 h-full w-1.5" style={{ background: "linear-gradient(90deg, oklch(0.2 0.02 262 / 0.28), transparent)" }} />
                   {b.status === "reading" && (
                     <span className="absolute right-2 top-2 rounded-md px-1.5 py-[3px] text-[8px] tracking-[0.08em] text-white" style={{ fontFamily: "var(--font-mono)", background: "oklch(0.6 0.17 150)" }}>READING</span>
